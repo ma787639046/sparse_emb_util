@@ -66,10 +66,17 @@ jobs:
         with:
           path: dist/
 
-      - name: Flatten wheels into one directory
+      - name: Merge wheels
         run: |
           mkdir all
-          find dist -name '*.whl' -exec cp {} all/ \;
+          for wheel in dist/*/*.whl; do
+            if [ -s "$wheel" ]; then
+              echo "✅ Found wheel: $wheel"
+              cp "$wheel" all/
+            else
+              echo "⚠️ Skipping empty or invalid wheel: $wheel"
+            fi
+          done
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.8
