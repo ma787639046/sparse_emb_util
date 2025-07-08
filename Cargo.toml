@@ -1,0 +1,23 @@
+[package]
+name = "sparse_emb_util"
+version = "0.2.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "sparse_emb_util"
+crate-type = ["cdylib"]
+
+[dependencies]
+half = "2.0"
+icu_properties = { version = "1.5", features = ["serde"] }
+icu_provider = { version = "1.5", features = ["sync"] }
+icu_provider_adapters = "1.5"
+icu_provider_blob = "1.5"
+icu_segmenter = { version = "1.5", features = ["serde"] }
+itertools = "0.13.0"
+numpy = { version = "0.23.0", features = ["half"]}
+onig = { version = "6", default-features = false }
+pyo3 = { version = "0.23.2",  features = ["extension-module"] }
+rayon = "1.10.0"
+unicode-normalization = "0.1"
