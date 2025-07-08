@@ -77,12 +77,9 @@ jobs:
               echo "⚠️ Skipping empty or invalid wheel: $wheel"
             fi
           done
-      
-      - name: Install modern twine + pkginfo
-        run: pip install --upgrade 'twine>=4.0.0' 'pkginfo>=1.10.0'
 
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.8.8
+        uses: pypa/gh-action-pypi-publish@v1.12.4
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           packages-dir: all
