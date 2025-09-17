@@ -10,7 +10,7 @@ name = "sparse_emb_util"
 requires-python = ">=3.8"
 description = "Utilities for sparse embedding processing using Rust + Python."
 readme = "README.md"
-license = "Apache 2.0"
+license = "Apache-2.0"
 authors = [
     { name="Guangyuan Ma", email="Ma787639046@outlook.com" }
 ]
